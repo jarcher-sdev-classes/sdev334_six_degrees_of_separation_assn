@@ -104,7 +104,7 @@ Lastly, write a console program that allows a user to do the following:
 
 Some examples:
 
-```java 
+```text 
 Welcome to my Kevin Bacon Game!
 *******************************
 
