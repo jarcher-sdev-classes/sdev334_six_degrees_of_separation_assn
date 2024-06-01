@@ -68,6 +68,8 @@ calculates the distance between actors/actresses using any central figure in Hol
 For example, you could calculate "Lawrence numbers" for Jennifer Lawrence or "Connery numbers" 
 for Sean Connery.
 
+<img src="assn-imgs/assn_4.png" width="300">
+
 A question we want to directly answer is "which actor or actress is really at the 
 center of Hollywood?"
 
@@ -82,17 +84,28 @@ To start, review the files you have been provided in the project:
 - **Console & Main class**: these classes will contain code for the Kevin Bacon game running 
   on the Java console.
 
-Before moving on, take a moment to consider the format of the text files. You should try to identify where actor/actress names are stored on each line as well as movies they star in. For example:
+Before moving on, take a moment to consider the format of the text files. You should try to 
+identify where actor/actress names are stored on each line as well as movies they star in.
+
+<img src="assn-imgs/assn_7.png" width="600">
 
 ## Building a Graph
 
-Your first programming task is to assemble a graph object that can be used to generate "actor numbers." Recall that an actor number is like a "Bacon number" except that you can choose any actor as the source vertex. The provided MyGraph class should be sufficient for this problem. The graph object you instantiate should store both movie titles and actor/actress names in the graph, with an edge between an actor/actress and the movies they have starred in.
+Your first programming task is to assemble a graph object that can be used to generate 
+"actor numbers." Recall that an actor number is like a "Bacon number" except that you 
+can choose any actor as the source vertex. The provided MyGraph class should be sufficient 
+for this problem. The graph object you instantiate should store both movie titles and 
+actor/actress names in the graph, with an edge between an actor/actress and the movies 
+they have starred in.
 
 For example:
 
 <img src="assn-imgs/assn_5.png" width="700">
 
-To help store different types of vertices, you have been provided the DataPoint class to store either of the two types of vertex values. The `isActor` boolean field can be used to differentiate between the names at each vertex. This means that your generic type for the graph will look like the following:
+To help store different types of vertices, you have been provided the DataPoint class 
+to store either of the two types of vertex values. The `isActor` boolean field can 
+be used to differentiate between the names at each vertex. This means that your generic 
+type for the graph will look like the following:
 
 ```java
 MyGraph<DataPoint> actorNumberGraph = new MyGraph<>();
@@ -100,7 +113,9 @@ MyGraph<DataPoint> actorNumberGraph = new MyGraph<>();
 
 ## Calculating Actor Numbers
 
-As part of your solution, you will need to use this graph to calculate actor numbers based on a source vertex (containing an actor name) in the graph. To start, you should add a method which does this calculation. For example:
+As part of your solution, you will need to use this graph to calculate actor numbers based 
+on a source vertex (containing an actor name) in the graph. To start, you should add a 
+method which does this calculation. For example:
 
 ```java 
 public Map<String, Integer> generateActorNumbers(String actorSource)
@@ -109,16 +124,22 @@ public Map<String, Integer> generateActorNumbers(String actorSource)
 }
 ```
 
-This method should use a graph traversal to determine each actor number. Of the two traversals we have covered (DFS and BFS), you should use breadth-first search. You should not be using depth-first-search. Take a moment and consider why this is the case.
+This method should use a graph traversal to determine each actor number. Of the two 
+traversals we have covered (DFS and BFS), you should use breadth-first search. You should 
+not be using depth-first-search. Take a moment and consider why this is the case.
 
-There are also several complications when writing BFS on the graph. These will need to be addressed in your code:
+There are also several complications when writing BFS on the graph. These will need to 
+be addressed in your code:
 
-- You need to keep a counter for each group of neighbor actors/actresses traversed from your source vertex.
+- You need to keep a counter for each group of neighbor actors/actresses traversed from 
+  your source vertex.
     - All neighbor (actors/actresses) should have an actor number of 1
     - All neighbors of neighbors (actors/actresses) should have an actor number of 2
     - All neighbors of neighbors of neighbors (actors/actresses) should have an actor number of 3
     - And so forth...
-- Your traversal will generally skip movies during the traversal. Even so, your calculations will need to address when a group of movies have been visited and then the next vertex is an actor. In this situation the counter for the actor number should increase.
+- Your traversal will generally skip movies during the traversal. Even so, your calculations 
+  will need to address when a group of movies have been visited and then the next vertex is 
+  an actor. In this situation the counter for the actor number should increase.
 
 ## Console Program
 
@@ -131,9 +152,9 @@ Lastly, write a console program that allows a user to do the following:
     - Entering a source actor/actress name
     - Listing the actor numbers and the average actor number
 
-Some examples:
+Here is some example output on the Java console:
 
-```text 
+```text
 Welcome to my Kevin Bacon Game!
 *******************************
 
@@ -151,7 +172,9 @@ Make a choice:
 2. List Movies
 3. Calculate Actors Numbers
 4. Exit
+```
 
+```text
 Make a choice: 
 1. List Actors
 2. List Movies
@@ -166,7 +189,9 @@ Actor: angela bassett
 Actor: anne heche
 Actor: antony sher
 ...
+```
 
+```text
 Make a choice: 
 1. List Actors
 2. List Movies
@@ -181,7 +206,9 @@ Movie: bordeaux
 Movie: "burn notice"
 Movie: "house of frankenstein"
 ...
+```
 
+```text
 Make a choice: 
 1. List Actors
 2. List Movies
@@ -207,7 +234,9 @@ whoopi goldberg -> 1
 william shatner -> 2
 
 Average actor number: 1.2522522522522523
+```
 
+```text
 Make a choice: 
 1. List Actors
 2. List Movies
@@ -219,8 +248,8 @@ Process finished with exit code 0
 
 ## Requirements
 
-Any submissions ignoring the following requirements will be required to resubmit their work:
+Here are some reminders on how to submit your work:
 
-- Implementations of graphs that store actors or movies as edges in the graph will not be accepted.
-- Implementations of graphs that do not store movies directly in the graph will not be accepted.
-- Your program must be able to read all the input files in the provided zip file. Test this before you submit your work.
+- Make sure that all relevant files are committed and push to the Github repository on Github Classroom.
+- Before submitting your work, test each of the functionalities in your console program.
+- Your project must pass a Linter check to be considered for grading.
