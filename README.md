@@ -1,31 +1,52 @@
+<img src="assn-imgs/assn_1.jpg" width="500">
+
 # Overview
 
-The number of relationships that exist between people, in any problem domain, is often surprising. Our world is becoming more and more interconnected, a concept that was explored by the social psychologist Stanley Milgram in the 1960s. Milgram is known for his "small world" experiment, which is described on the following [Wikipedia page](https://en.wikipedia.org/wiki/Small-world_experiment).
+The number of relationships that exist between people, in any problem domain, is often surprising. 
+Our world is becoming more and more interconnected, a concept that was explored by the social 
+psychologist Stanley Milgram in the 1960s. Milgram is known for his "small world" experiment, 
+which is described on the following [Wikipedia page](https://en.wikipedia.org/wiki/Small-world_experiment).
 
 ## The Milgram Experiment
 
-The goal of the experiment was to create a chain of correspondence between distant individuals who did not share a direct relationship. If the source of the correspondence did not know the destination individual, then perhaps it is likely they knew someone who knew the individual. As part of the experiment any person who received a piece of correspondence was asked to:
+The goal of the experiment was to create a chain of correspondence between distant individuals 
+who did not share a direct relationship. If the source of the correspondence did not know the 
+destination individual, then perhaps it is likely they knew someone who knew the individual. 
+As part of the experiment any person who received a piece of correspondence was asked to:
+
 - forward the correspondence to the destination if they knew the person
 - otherwise forward the correspondence to relations that were likely to know the person
 
-The results of Milgram's experiment were surprising in that the correspondence often reached the destination in around 5-6 steps (or relationships). This resulted in the now-popular description of "six-degrees of separation."
+<img src="assn-imgs/assn_3.png" width="400">
+
+The results of Milgram's experiment were surprising in that the correspondence often reached the 
+destination in around 5-6 steps (or relationships). This resulted in the now-popular saying 
+"six-degrees of separation."
 
 ## The Kevin Bacon Game
 
-Initially created as a parlor game, the "Kevin Bacon Game" models the relationships between actors/actresses in Hollywood with respect to Kevin Bacon. The game illustrates the concept of six-degrees of separation, where it tracks actors/actresses who starred in similar movies and then provides a bacon number. This number represents the minimum number of relationships that separate an actor/actress from Kevin Bacon.
+Initially created as a parlor game, the "Kevin Bacon Game" models the relationships between 
+actors/actresses in Hollywood with respect to Kevin Bacon. The game illustrates the concept 
+of six-degrees of separation, where it tracks actors/actresses who starred in similar movies 
+and then provides a bacon number. This number represents the minimum number of relationships 
+that separate an actor/actress from Kevin Bacon.
 
-An example of these types of relationships can be seen below. Please note that the image below does not show all relationships between actors/actresses, but is an example of what types of connections exist.
+An example of these types of relationships can be seen below. Please note that the image below 
+does not show all relationships between actors/actresses, but is an example of what types of 
+connections exist.
 
-![Kevin Bacon Game Example](kb_2.png)
+<img src="assn-imgs/assn_6.png" width="800">
 
 From the diagram above you would have the following bacon numbers:
 
-- Oliver Platt: 1
-- Kim Delgado: 2
-- Demi Moore: 1
-- Kiele Sanchez: 2
+- Bob Odenkirk: 2
+- Steve Zahn: 4
+- Sissy Spacek: 1
+- Johnny Depp: 3
 
-This diagram also displays a principle of the Kevin Bacon game, where it is difficult to find individuals with a high bacon number. For example, at the time of this writing, the following bacon numbers can be found with a quick Google search.
+This diagram also displays a principle of the Kevin Bacon game, where it is difficult to 
+find individuals with a high bacon number. For example, at the time of this writing, 
+the following bacon numbers can be found with a quick Google search.
 
 - Justin Bieber (singer): 2
 - Barrack Obama (previous president): 2
@@ -34,24 +55,32 @@ This diagram also displays a principle of the Kevin Bacon game, where it is diff
 - Evel Knievel (stunt man): 2
 - You: ???
 
-Note: These numbers will often change as new movies, documentaries, and shows are released. Thus lowering different bacon numbers.
+Note: These numbers will often change as new movies, documentaries, and shows are released. 
+Thus lowering different bacon numbers.
 
 ## Graph Theory
 
-The phenomena of six-degrees of separation can be seen in all types of networks and is an interesting application of graph structures. The goal of this assignment is to read movie & actor data into a program, model the relationships in a graph, and then calculate bacon numbers (with a twist).  Instead of bacon numbers, we will be writing a program that calculates the distance between actors/actresses using any central figure in Hollywood. For example, you could calculate "Lawrence numbers" for Jennifer Lawrence or "Connery numbers" for Sean Connery.
+The phenomena of six-degrees of separation can be seen in all types of networks and is an 
+interesting application of graph structures. The goal of this assignment is to read movie 
+& actor data into a program, model the relationships in a graph, and then calculate bacon 
+numbers (with a twist).  Instead of bacon numbers, we will be writing a program that 
+calculates the distance between actors/actresses using any central figure in Hollywood. 
+For example, you could calculate "Lawrence numbers" for Jennifer Lawrence or "Connery numbers" 
+for Sean Connery.
 
-A question we want to directly answer is "which actor or actress is really at the center of Hollywood?"
+A question we want to directly answer is "which actor or actress is really at the 
+center of Hollywood?"
 
 ## Setup
 
-To start, download the following starter files: [github](https://github.com/example)
-
-The project folder contains several files:
-- **files**: a directory containing several data sets with actor/actress names and the movies they star in
+To start, review the files you have been provided in the project:
+- **files**: a directory containing several data sets with actor/actress names and the movies 
+  they star in
 - **IGraph, MyGraph**: an interface and class representing an undirected graph
 - **DataPoint**: a helper class used to store movies or actors/actresses in the graph
 - **MoviesIO**: a data layer for reading from text files in the files directory
-- **Console & Main class**: these classes will contain code for the Kevin Bacon game running on the Java console.
+- **Console & Main class**: these classes will contain code for the Kevin Bacon game running 
+  on the Java console.
 
 Before moving on, take a moment to consider the format of the text files. You should try to identify where actor/actress names are stored on each line as well as movies they star in. For example:
 
@@ -61,7 +90,7 @@ Your first programming task is to assemble a graph object that can be used to ge
 
 For example:
 
-![Graph Example](kb_5.png)
+<img src="assn-imgs/assn_5.png" width="700">
 
 To help store different types of vertices, you have been provided the DataPoint class to store either of the two types of vertex values. The `isActor` boolean field can be used to differentiate between the names at each vertex. This means that your generic type for the graph will look like the following:
 
