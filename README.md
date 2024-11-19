@@ -7,7 +7,7 @@ Our world is becoming more and more interconnected, a concept that was explored 
 psychologist Stanley Milgram in the 1960s. Milgram is known for his "small world experiment", 
 which is described on the following [Wikipedia page](https://en.wikipedia.org/wiki/Small-world_experiment).
 
-## The Milgram Experiment
+## Milgram's Small World Experiment
 
 The goal of the experiment was to create a chain of correspondence between distant individuals 
 who did not share a direct relationship. If the source of the correspondence did not know the 
