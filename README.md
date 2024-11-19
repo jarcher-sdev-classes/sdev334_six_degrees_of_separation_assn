@@ -4,7 +4,7 @@
 
 The number of relationships that exist between people, in any problem domain, is often surprising. 
 Our world is becoming more and more interconnected, a concept that was explored by the social 
-psychologist Stanley Milgram in the 1960s. Milgram is known for his "small world" experiment, 
+psychologist Stanley Milgram in the 1960s. Milgram is known for his "small world experiment", 
 which is described on the following [Wikipedia page](https://en.wikipedia.org/wiki/Small-world_experiment).
 
 ## The Milgram Experiment
